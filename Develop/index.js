@@ -43,25 +43,19 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    
-    
     inquirer
         .prompt(questions)
         .then((answers) => {
-            console.log(answers);
             let readmeString = "";
-            readmeString += `Title: ${answers.title}\n`;
-            readmeString += `Description ${answers.description}\n`;
-            readmeString += `Installation Instructions ${answers.installationInstructions}\n`;
-            readmeString += `Usage Information ${answers.usageInformation}\n`;
-            readmeString += `Contribution Guidelines ${answers.contributionGuidelines}\n`;
-            readmeString += `Test Instructions ${answers.testInstructions}\n`;
-            console.log(readmeString);
+            readmeString += `## Title:\n${answers.title}\n\n`;
+            readmeString += `#### Description:\n${answers.description}\n\n`;
+            readmeString += `#### Installation Instructions:\n${answers.installationInstructions}\n\n`;
+            readmeString += `#### Usage Information:\n${answers.usageInformation}\n\n`;
+            readmeString += `#### Contribution Guidelines:\n${answers.contributionGuidelines}\n\n`;
+            readmeString += `#### Test Instructions:\n${answers.testInstructions}\n`;
+
             writeToFile("README.md", readmeString);
         })
-
-        
-
     }
 
     
