@@ -1,8 +1,7 @@
 import { writeFileSync } from 'fs';
 import inquirer from 'inquirer';
-// TODO: Include packages needed for this application
 
-// TODO: Create an array of questions for user input
+// Generate list of questions to prompt users with 
 const questions = [
     {
       type: 'input',
@@ -36,12 +35,12 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
+// write string to file 
 function writeToFile(fileName, data) {
     writeFileSync(fileName, data, 'utf8');
 }
 
-// TODO: Create a function to initialize app
+// this is the main fumction that prompts the questions to the user and generates the readme string with the answers 
 function init() {
     inquirer
         .prompt(questions)
